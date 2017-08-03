@@ -1,0 +1,4 @@
+name: Poster template
+description: >
+  Simple template for reproducible posters.
+create_dir: true
