@@ -1,0 +1,17 @@
+Package: postr
+Title: Prepare reproducible posters using R Markdown
+Version: 0.0.0.9000
+Description: Templates and helper functions to prepare R Markdown based conference
+    posters and produce output both in html for hosting and png for printing.
+    Relies on the flexdashboard package to easily define poster layout.
+Authors@R: person("Oscar", "de León", email = "odeleon@ces.uvg.edu.gt", role = c("aut", "cre"))
+Depends: R (>= 3.0.2)
+Imports:
+    flexdashboard (>= 0.5),
+    webshot (>= 0.4.1)
+License: GPL-2
+Encoding: UTF-8
+LazyData: true
+URL: https://github.com/odeleongt/postr
+BugReports: https://github.com/odeleongt/postr/issues/
+RoxygenNote: 6.0.1
