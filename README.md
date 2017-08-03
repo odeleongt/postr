@@ -22,6 +22,6 @@ In order to use this poster template, you need to:
 1. Install the PhantomJS library  
   `webshot::install_phantomjs()`
 1. Create a new R Markdown document in Rstudio based on the poster template,
-  or run 
-    rmarkdown::draft("my_poster.Rmd", template = "poster", package = "postr")
-1. Run `postr::render()`
+  or run
+  `rmarkdown::draft("my_poster.Rmd", template = "poster", package = "postr")`
+1. Run `postr::render("my_poster/my_poster.Rmd")` to render a printable A1 image.
