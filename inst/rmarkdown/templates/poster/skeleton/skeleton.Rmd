@@ -48,7 +48,7 @@ hist(volcano)
 
 ### **Column 2 title**
 
-Content dor the second column.
+Content for the second column.
 
 To show the code in the chunks you have to ask for it with `echo=TRUE`.
 You can hold content from a (named) code chunk and show it with a different call.
