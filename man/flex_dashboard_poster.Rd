@@ -7,7 +7,7 @@
 flex_dashboard_poster(fig_width = 6, fig_height = 6, fig_mobile = FALSE,
   dev = "png", self_contained = TRUE, orientation = "rows",
   df_print = "kable", css = NULL, keep_md = FALSE, theme = "default",
-  highlight = "default", md_extensions = NULL, ...)
+  highlight = "default", md_extensions = NULL, render_print = FALSE, ...)
 }
 \arguments{
 \item{fig_width}{Default width (in inches) for figures}
@@ -56,8 +56,11 @@ R Markdown output format to pass to \code{\link{render}}
 A flexdashboard poster is an R Markdown document using a flexdashboard
 layout to arrange text, figures, tables and other content into a typical
 grid format as used for conference posters.
-By default, the print version will be rendered with \code{render} when
-exiting \code{rmarkdown::render}.
+The print version will be rendered when knitting if the format option
+\code{render_print} is set to \code{TRUE} in the YAML header or the function
+call; currently this requires that the root dir be set to the default or a
+path relative to the Rmd document location, otherwise it will result in an
+error.
 }
 \details{
 Compared to \code{flexdashboard::flex_dashboard}, it:

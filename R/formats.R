@@ -4,8 +4,11 @@
 #' A flexdashboard poster is an R Markdown document using a flexdashboard
 #' layout to arrange text, figures, tables and other content into a typical
 #' grid format as used for conference posters.
-#' By default, the print version will be rendered with \code{render} when
-#' exiting \code{rmarkdown::render}.
+#' The print version will be rendered when knitting if the format option
+#' \code{render_print} is set to \code{TRUE} in the YAML header or the function
+#' call; currently this requires that the root dir be set to the default or a
+#' path relative to the Rmd document location, otherwise it will result in an
+#' error.
 #'
 #' @details
 #'
@@ -30,19 +33,26 @@ flex_dashboard_poster <- function(
   fig_width = 6, fig_height = 6, fig_mobile = FALSE, dev = 'png',
   self_contained = TRUE, orientation = "rows", df_print = "kable",
   css = NULL, keep_md = FALSE, theme = "default", highlight = "default",
-  md_extensions = NULL,
+  md_extensions = NULL, render_print = FALSE,
   ...
 ) {
   # Render the print version using the default locations when exiting rmarkdown::render
-  on_exit <- function(){
-    print_render <- function(){
-      input_poster <- paste(
-        dirname(original_input), output_dir, output_file, sep = "/"
-      )
-      postr::render(input = input_poster)
+  if(render_print){
+    on_exit <- function(){
+      print_render <- function(){
+        input_poster <- paste(
+          dirname(original_input), output_dir, output_file, sep = "/"
+        )
+        postr::render(input = input_poster)
+      }
+      environment(print_render) <- parent.frame(n = 2)
+      print_render()
     }
-    environment(print_render) <- parent.frame(n = 2)
-    print_render()
+  } else {
+    exit_actions <- list()
+    on_exit <- function() {
+      for (action in exit_actions) try(action())
+    }
   }
 
   # Define output format
@@ -61,4 +71,3 @@ flex_dashboard_poster <- function(
     on_exit = on_exit
   )
 }
-
