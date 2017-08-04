@@ -47,11 +47,7 @@ and "haddock". Pass NULL to prevent syntax highlighting.}
 default definition or R Markdown. See the \code{\link{rmarkdown_format}} for
 additional details.}
 
-\item{...}{Additional arguments passed to \code{\link{html_document}}}
-
-\item{readme}{Use this vignette as the package README.md file (i.e. render
-it as README.md to the package root). Note that if there are image files
-within your vignette you should be sure to add README_files to .Rbuildignore}
+\item{...}{Additional arguments passed to \code{\link{flexdashboard::flex_dashboard}}}
 }
 \value{
 R Markdown output format to pass to \code{\link{render}}
