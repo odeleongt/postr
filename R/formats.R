@@ -4,6 +4,8 @@
 #' A flexdashboard poster is an R Markdown document using a flexdashboard
 #' layout to arrange text, figures, tables and other content into a typical
 #' grid format as used for conference posters.
+#' By default, the print version will be rendered with \code{render} when
+#' exiting \code{rmarkdown::render}.
 #'
 #' @details
 #'
@@ -31,6 +33,19 @@ flex_dashboard_poster <- function(
   md_extensions = NULL,
   ...
 ) {
+  # Render the print version using the default locations when exiting rmarkdown::render
+  on_exit <- function(){
+    print_render <- function(){
+      input_poster <- paste(
+        dirname(original_input), output_dir, output_file, sep = "/"
+      )
+      postr::render(input = input_poster)
+    }
+    environment(print_render) <- parent.frame(n = 2)
+    print_render()
+  }
+
+  # Define output format
   rmarkdown::output_format(
     knitr = NULL,
     pandoc = NULL,
@@ -42,6 +57,8 @@ flex_dashboard_poster <- function(
       orientation = orientation,
       highlight = highlight,
       ...
-    )
+    ),
+    on_exit = on_exit
   )
 }
+

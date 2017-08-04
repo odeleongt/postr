@@ -56,6 +56,8 @@ R Markdown output format to pass to \code{\link{render}}
 A flexdashboard poster is an R Markdown document using a flexdashboard
 layout to arrange text, figures, tables and other content into a typical
 grid format as used for conference posters.
+By default, the print version will be rendered with \code{render} when
+exiting \code{rmarkdown::render}.
 }
 \details{
 Compared to \code{flexdashboard::flex_dashboard}, it:
