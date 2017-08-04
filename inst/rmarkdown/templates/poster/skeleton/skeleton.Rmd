@@ -1,7 +1,8 @@
 ---
 title: "**Short title:** Flexdashboard poster template"
 output: 
-  postr::flex_dashboard_poster: default
+  postr::flex_dashboard_poster:
+    render_print: true
 ---
 
 
@@ -28,6 +29,11 @@ output:
 
 **Abstract** This paragraph will be rendered inside a wide box right below the
 poster title and authors information.
+The `render_print` format option is set to `TRUE` by default in this poster
+sample, and will result in `postr::render` being called when knitting the
+document (see `help("flex_dashboard_poster", package = postr)`).
+To disable this (recommended in the initial stages of poster development)
+set the `render_print` option to `FALSE`.
 
 
 
@@ -51,7 +57,6 @@ hist(volcano)
 Content for the second column.
 
 To show the code in the chunks you have to ask for it with `echo=TRUE`.
-You can hold content from a (named) code chunk and show it with a different call.
 
 ```{r volcano-heat, echo=TRUE, eval=FALSE}
 filled.contour(volcano, color.palette = terrain.colors, asp = 1)
