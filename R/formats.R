@@ -31,18 +31,6 @@ flex_dashboard_poster <- function(
   md_extensions = NULL,
   ...
 ) {
-
-  # Set knit chunk defaults
-  knitr_options <- rmarkdown::knitr_options_html(
-    fig_width = fig_width,
-    fig_height = fig_height, fig_retina = NULL, keep_md = FALSE,
-    dev = dev
-  )
-  knitr_options$opts_chunk$echo = FALSE
-  knitr_options$opts_chunk$warning = FALSE
-  knitr_options$opts_chunk$message = FALSE
-  knitr_options$opts_chunk$comment = NA
-
   rmarkdown::output_format(
     knitr = NULL,
     pandoc = NULL,
