@@ -25,8 +25,10 @@
 #'   \item never uses retina figures
 #'  }
 #'
+#' @param render_print Whether to render the print version (defaults to FALSE).
 #' @inheritParams flexdashboard::flex_dashboard
 #' @param ... Additional arguments passed to \code{\link{flexdashboard::flex_dashboard}}
+#' @inheritParams rmarkdown::output_format
 #' @return R Markdown output format to pass to \code{\link{render}}
 #' @export
 flex_dashboard_poster <- function(
