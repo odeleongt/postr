@@ -18,7 +18,7 @@
 #'   \item uses level 2 headings as dashboard rows by default, because posters are
 #'   usually divided vertically in horizontal sections (e.g. title, body, figures),
 #'   each of which can contain a different number of columns (i.e. level three headings)
-#'   \item prints data frames using \code{\link{knitr::kable}} to show nice simple
+#'   \item prints data frames using \code{\link[knitr]{kable}} to show nice simple
 #'   tables when there is data frame output from the code chunks
 #'   \item produces larger figures
 #'   \item never creates mobile rendering of the R graphics
@@ -27,7 +27,7 @@
 #'
 #' @param render_print Whether to render the print version (defaults to FALSE).
 #' @inheritParams flexdashboard::flex_dashboard
-#' @param ... Additional arguments passed to \code{\link{flexdashboard::flex_dashboard}}
+#' @param ... Additional arguments passed to \code{\link[flexdashboard]{flex_dashboard}}
 #' @inheritParams rmarkdown::output_format
 #' @return R Markdown output format to pass to \code{\link{render}}
 #' @export

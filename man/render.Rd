@@ -15,7 +15,7 @@ render(input, output = paste0(tools::file_path_sans_ext(input), ".png"),
 but uses the png extension.}
 
 \item{width}{Width, in pixels, for the viewport
-(see \code{\link{webshot::webshot}}). This will impact the size of elements
+(see \code{\link[webshot]{webshot}}). This will impact the size of elements
 relative to the page.}
 
 \item{aspect_ratio}{Aspect ratio between the height and the width of the

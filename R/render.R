@@ -17,7 +17,7 @@
 #' @param output Output file. Defaults to the same name that the input file,
 #'   but uses the png extension.
 #' @param width Width, in pixels, for the viewport
-#'   (see \code{\link{webshot::webshot}}). This will impact the size of elements
+#'   (see \code{\link[webshot]{webshot}}). This will impact the size of elements
 #'   relative to the page.
 #' @param aspect_ratio Aspect ratio between the height and the width of the
 #'   viewport. The poster orientation will depend on this ratio; if it is
