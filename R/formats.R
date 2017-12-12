@@ -1,4 +1,4 @@
-#' Convert to a poster with fexdashboard layout.
+#' Convert to a poster with flexdashboard layout.
 #'
 #' @description
 #' A flexdashboard poster is an R Markdown document using a flexdashboard

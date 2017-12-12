@@ -2,7 +2,7 @@
 % Please edit documentation in R/formats.R
 \name{flex_dashboard_poster}
 \alias{flex_dashboard_poster}
-\title{Convert to a poster with fexdashboard layout.}
+\title{Convert to a poster with flexdashboard layout.}
 \usage{
 flex_dashboard_poster(fig_width = 6, fig_height = 6, fig_mobile = FALSE,
   dev = "png", self_contained = TRUE, orientation = "rows",
