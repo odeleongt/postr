@@ -37,12 +37,14 @@
 #' @return Silently returns the path of the rendered image.
 #' @export
 #' @examples
+#' \dontrun{
 #' # generate a simple poster from the provided template
 #' rmarkdown::draft("my_poster.Rmd", template = "poster", package = "postr")
 #' # render the html output
 #' rmarkdown::render(input = "my_poster/my_poster.Rmd")
 #' # render the png poster
 #' postr::render("my_poster/my_poster.html")
+#' }
 render <- function(
   input,
   output = paste0(tools::file_path_sans_ext(input), '.png'),
