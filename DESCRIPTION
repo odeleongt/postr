@@ -7,6 +7,7 @@ Description: Templates and helper functions to prepare R Markdown based conferen
 Authors@R: person("Oscar", "de León", email = "odeleon@ces.uvg.edu.gt", role = c("aut", "cre"))
 Depends: R (>= 3.0.2)
 Imports:
+    rmarkdown (>= 1.8),
     flexdashboard (>= 0.5),
     webshot (>= 0.4.1)
 License: GPL-2
