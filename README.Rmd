@@ -1,3 +1,9 @@
+---
+output:
+  github_document:
+    html_preview: false
+---
+
 # postr
 
 R Markdown template for conference posters using flexdashboard layouts.
