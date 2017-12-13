@@ -15,7 +15,7 @@
 <![endif]-->
 </head>
 <body>
-    <div class="container template-home">
+    <div class="container template-vignette">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -55,40 +55,66 @@
 
       
       </header><div class="row">
-  <div class="contents col-md-9">
-    <div id="postr" class="section level1">
+  <div class="col-md-9">
+    
+
+    
+    
+<div class="contents">
+<div id="postr" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#postr" class="anchor"></a>postr</h1></div>
-<p>R Markdown template for conference posters using flexdashboard layouts.</p>
-<div id="preparing-a-new-poster" class="section level2">
+<p>Prepare reproducible conference posters using R Markdown</p>
+<div id="overview" class="section level2">
 <h2 class="hasAnchor">
-<a href="#preparing-a-new-poster" class="anchor"></a>Preparing a new poster</h2>
-<p>In order to use this poster template, you need to:</p>
-<ol>
-<li>Install the <a href="https://github.com/odeleongt/postr"><code>odeleongt/postr</code></a> package from github<br><code><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">devtools::install_github("odeleongt/postr")</a></code>
-</li>
-<li>Install the PhantomJS library<br><code><a href="http://www.rdocumentation.org/packages/webshot/topics/install_phantomjs">webshot::install_phantomjs()</a></code>
-</li>
-<li>Create a new R Markdown document in Rstudio based on the poster template, or run<br><code><a href="http://www.rdocumentation.org/packages/rmarkdown/topics/draft">rmarkdown::draft("my_poster.Rmd", template = "poster", package = "postr")</a></code>
-</li>
-<li>Run <code><a href="http://www.rdocumentation.org/packages/postr/topics/render">postr::render("my_poster/my_poster.Rmd")</a></code> to render a printable A1 image.</li>
-</ol>
+<a href="#overview" class="anchor"></a>Overview</h2>
+<p>Although several workflows are currently available for academic poster preparation none of them are ideal. Commonly, point-and-click software is used to arrange poster content regardless of the analysis pipeline. Most of these software tools are proprietary, thus trapping our content. Typical free and script based tools such as <span class="math inline">\(\LaTeX\)</span> might not be appealing or seem as complex as using a point-and-click tool.</p>
+<p>This package provides templates and helper functions to prepare R Markdown based conference posters with a free and reproducible workflow and produce output both in html for hosting and png for printing. Relies on the flexdashboard package to easily define poster layout.</p>
 </div>
 <div id="dependencies" class="section level2">
 <h2 class="hasAnchor">
 <a href="#dependencies" class="anchor"></a>Dependencies</h2>
 <p>This poster template depends on the following R packages</p>
 <ul>
-<li>rmarkdown [@rmarkdown]</li>
-<li>flexdashboard [@flexdashboard]</li>
-<li>webshot [@webshot]</li>
+<li>rmarkdown</li>
+<li>flexdashboard</li>
+<li>webshot</li>
 </ul>
+</div>
+<div id="preparing-a-new-poster" class="section level2">
+<h2 class="hasAnchor">
+<a href="#preparing-a-new-poster" class="anchor"></a>Preparing a new poster</h2>
+<p>In order to use this poster template, you need to:</p>
+<ol style="list-style-type: decimal">
+<li>Install the <a href="https://github.com/odeleongt/postr"><code>odeleongt/postr</code></a> package from github<br><code><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">devtools::install_github("odeleongt/postr")</a></code>
+</li>
+<li>Install the PhantomJS library<br><code><a href="http://www.rdocumentation.org/packages/webshot/topics/install_phantomjs">webshot::install_phantomjs()</a></code>
+</li>
+<li>Create a new R Markdown document in Rstudio based on the poster template, or run<br><code><a href="http://www.rdocumentation.org/packages/rmarkdown/topics/draft">rmarkdown::draft("my_poster.Rmd", template = "poster", package = "postr")</a></code>
+</li>
+<li>Render a printable A1 image<br><code><a href="http://www.rdocumentation.org/packages/postr/topics/render">postr::render("my_poster/my_poster.Rmd")</a></code>
+</li>
+</ol>
+</div>
+<div id="references" class="section level2">
+<h2 class="hasAnchor">
+<a href="#references" class="anchor"></a>References</h2>
+<ul>
+<li>JJ Allaire, Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, Hadley Wickham, Joe Cheng and Winston Chang (2017). rmarkdown: Dynamic Documents for R. R package version 1.8. <a href="https://CRAN.R-project.org/package=rmarkdown" class="uri">https://CRAN.R-project.org/package=rmarkdown</a>
+</li>
+<li>Barbara Borges and JJ Allaire (2017). flexdashboard: R Markdown Format for Flexible Dashboards. R package version 0.5.1. <a href="https://CRAN.R-project.org/package=flexdashboard" class="uri">https://CRAN.R-project.org/package=flexdashboard</a>
+</li>
+<li>Winston Chang (2017). webshot: Take Screenshots of Web Pages. R package version 0.5.0. <a href="https://CRAN.R-project.org/package=webshot" class="uri">https://CRAN.R-project.org/package=webshot</a>
+</li>
+</ul>
+</div>
 </div>
 </div>
   </div>
 
-  <div class="col-md-3" id="sidebar">
-    <h2>Links</h2>
+  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+    <h2 class="hasAnchor">
+<a href="#sidebar" class="anchor"></a>Links</h2>
 <ul class="list-unstyled">
 <li>Browse source code at <br><a href="https://github.com/odeleongt/postr">https://​github.com/​odeleongt/​postr</a>
 </li>
@@ -102,6 +128,7 @@
 <li>Oscar de León <br><small class="roles"> Author, maintainer </small> </li>
 </ul>
 </div>
+
 </div>
 
 
