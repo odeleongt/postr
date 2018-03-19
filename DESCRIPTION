@@ -16,3 +16,4 @@ LazyData: true
 URL: https://github.com/odeleongt/postr
 BugReports: https://github.com/odeleongt/postr/issues/
 RoxygenNote: 6.0.1
+Suggests: testthat

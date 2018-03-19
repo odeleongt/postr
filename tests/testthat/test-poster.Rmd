@@ -1,0 +1,86 @@
+---
+title: "**Short title:** Flexdashboard poster template"
+output: postr::flex_dashboard_poster
+---
+
+
+## Header row {data-height=15}
+
+###
+
+<table style="width:100%">
+<tr>
+  <td><center><h3>
+  **Poster title**
+  </h3></center></td>
+  <td rowspan="2">
+  <img src="resources/logo.png" style="width:128px"></img>
+  </td>
+</tr>
+<tr><td><center>
+  **Author**
+  </center></td>
+</tr>
+</table> 
+
+<hr>
+
+**Abstract** This paragraph will be rendered inside a wide box right below the
+poster title and authors information.
+The `render_print` format option is set to `TRUE` by default in this poster
+sample, and will result in `postr::render` being called when knitting the
+document (see `help("flex_dashboard_poster", package = postr)`).
+To disable this (recommended in the initial stages of poster development)
+set the `render_print` option to `FALSE`.
+
+
+
+
+## Body row {data-height=75}
+
+### **Column 1 title**
+
+#### Heading
+
+This section defines the first column of the body row of the poster.
+You can include regular markdown text and R `code chunks`.
+
+```{r}
+hist(volcano)
+```
+
+
+### **Column 2 title**
+
+Content for the second column.
+
+To show the code in the chunks you have to ask for it with `echo=TRUE`.
+
+```{r volcano-heat, echo=TRUE, eval=FALSE}
+filled.contour(volcano, color.palette = terrain.colors, asp = 1)
+```
+
+You can also include data frames as tables just by printing them
+
+```{r}
+head(iris)
+```
+
+
+
+### **Column 3 title**
+
+This template shows 3 columns in the body row, you can change this by adding
+or removing third level headings (i.e. lines starting with ###).
+
+
+
+
+
+## Footer row {data-height=10} 
+
+### {data-width=50}
+
+
+### {data-width=50 .small}
+
