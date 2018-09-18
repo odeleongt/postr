@@ -14,7 +14,7 @@
 #' increase in resolution when downscaling.
 #'
 #' @param input Input file (an html generated with \code{\link{flex_dashboard_poster}}).
-#' @param output Output file. Defaults to the same name that the input file,
+#' @param output_file Output file. Defaults to the same name that the input file,
 #'   but uses the png extension.
 #' @param width Width, in pixels, for the viewport
 #'   (see \code{\link[webshot]{webshot}}). This will impact the size of elements
@@ -43,11 +43,11 @@
 #' # render the html output
 #' rmarkdown::render(input = "my_poster/my_poster.Rmd")
 #' # render the png poster
-#' postr::render("my_poster/my_poster.html")
+#' postr::render_poster_image("my_poster/my_poster.html")
 #' }
-render <- function(
+render_poster_image <- function(
   input,
-  output = paste0(tools::file_path_sans_ext(input), '.png'),
+  output_file = paste0(tools::file_path_sans_ext(input), '.png'),
   width = 1200,
   aspect_ratio = sqrt(2),
   height = floor(width * aspect_ratio),
@@ -58,13 +58,13 @@ render <- function(
   # Render poster
   webshot::webshot(
     url = input,
-    file = output,
+    file = output_file,
     vwidth = width,
     vheight = height,
     delay = delay,                           # Wait to allow all element to load
     zoom = poster_width / (width / (dpi / 25.4)) # Adjust pixel density
   )
-  return(invisible(output))
+  return(invisible(output_file))
 }
 
 
